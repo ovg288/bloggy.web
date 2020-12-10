@@ -1,0 +1,35 @@
+{
+  "Tplnrs": {
+    "number": "100000007777",
+    "code": "R0092102",
+    "order_type": "OZ5X",
+    "name": "ДКБА",
+    "group": "РП",
+    "subsidiary_code": "2000",
+    "master_code": "2003R200",
+    "department_code": "003",
+    "balance": "Не Мособлгаз",
+    "itd_number": "123",
+    "address": "г. Долгопрудный, ул. Лётная, д.1АО \"ДКБА\"",
+    "higher_tp_code": "20-03",
+    "date_start": "2020-11-01",
+    "date_end": "2020-11-30",
+    "operations": [
+      {
+        "number": "0410",
+        "suboperation_number": "0002",
+        "subsidiary_code": "0300",
+        "maintainer_code": "0307G13F",
+        "master_code": "0307G100",
+        "name": "Проверка на загазов.КТ",
+        "time_norm": "2.0",
+        "quantity": "1.0",
+        "unit": "ШТ.",
+        "technical_place_code": "8000252",
+        "date_start": "2020-11-02",
+        "date_end": "2020-11-10"
+      }
+    ]
+  }
+}
+

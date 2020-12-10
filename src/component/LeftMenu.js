@@ -12,6 +12,18 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
+
+import ArchitectureIcon from '@material-ui/icons/BlurOn'
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+  } from "react-router-dom";
+
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -53,6 +65,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LeftMenu(props) {
+    
+    let match = useRouteMatch();
 
     const { window } = props;
     const classes = useStyles();
@@ -67,16 +81,28 @@ function LeftMenu(props) {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-            {['Блог', 'Алгоритмы', 'Архитектура', 'Об авторе'].map((text, index) => (
+            <Link to={`/components`}>
+                <ListItem button key={'asd'}>
+                    <ListItemIcon><ArchitectureIcon /></ListItemIcon>
+                    <ListItemText primary={'asd'} />
+                </ListItem>
+            </Link>
+            <Link to={`/about`}>
+                <ListItem button key={'Алгоритмы'}>
+                    <ListItemIcon><ArchitectureIcon /></ListItemIcon>
+                    <ListItemText primary={'Алгоритмы'} />
+                </ListItem>
+            </Link>
+            {['Блог', 'Алгоритмы', 'Архитектура', 'CI/CD', 'Тестирование'].map((text, index) => (
             <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <ArchitectureIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
             </ListItem>
             ))}
         </List>
         <Divider />
         <List>
-            {['Проекты'].map((text, index) => (
+            {['Проекты', 'Об авторе'].map((text, index) => (
             <ListItem button key={text}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
@@ -103,7 +129,7 @@ function LeftMenu(props) {
                 <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-                Responsive drawer
+                OVGNotes
             </Typography>
             </Toolbar>
         </AppBar>
